@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Portfolio E5 — Kylian Cattoire · BTS SIO SLAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* ── Variables ── */
+:root{
+  --bg:#07090d;
+  --s1:#0d1117;
+  --s2:#111820;
+  --border:rgba(255,255,255,0.06);
+  --muted:#6a7a8c;
+  --text:#d8e2ec;
+  --head:#eef4ff;
+  --c:#4dd9ff;   /* cyan  */
+  --p:#a78bfa;   /* purple*/
+  --pk:#ff6aab;  /* pink  */
+  --g:#4ade80;   /* green */
+  --a:#fbbf24;   /* amber */
+  --r:12px;
+}
+
+/* ── Reset ── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 900px 450px at 20% 0%,rgba(167,139,250,.07),transparent),
+    radial-gradient(ellipse 700px 350px at 85% 100%,rgba(77,217,255,.05),transparent);
+}
+
+/* ── Header ── */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,9,13,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.hdr{
+  max-width:1140px;margin:0 auto;padding:13px 22px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.logo{
+  width:42px;height:42px;flex-shrink:0;border-radius:10px;
+  background:linear-gradient(135deg,var(--p),var(--c));
+  display:grid;place-items:center;
+  font-family:'Syne',sans-serif;font-weight:800;color:#04070c;font-size:15px;
+}
+.brand-txt h1{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--head);line-height:1.2}
+.brand-txt small{font-size:12px;color:var(--muted)}
+nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav a{
+  padding:6px 10px;border-radius:7px;
+  color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;
+  transition:color .14s,background .14s;
+}
+nav a:hover{color:var(--head);background:rgba(255,255,255,.04)}
+.cv-btn{
+  padding:8px 15px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--p),var(--c));
+  color:#04070c;font-weight:700;font-size:12px;text-decoration:none;
+  transition:opacity .14s;white-space:nowrap;
+}
+.cv-btn:hover{opacity:.85}
+
+/* ── Page grid ── */
+.page{
+  max-width:1140px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 300px;gap:18px;
+  padding:24px 22px 80px;
+  position:relative;z-index:1;
+}
+@media(max-width:880px){.page{grid-template-columns:1fr}}
+
+/* ── Cards ── */
+.card{
+  background:var(--s1);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:20px;
+  margin-bottom:15px;
+}
+.ctitle{
+  font-family:'Syne',sans-serif;font-size:16px;font-weight:700;
+  color:var(--head);margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.cicon{
+  width:30px;height:30px;border-radius:7px;flex-shrink:0;
+  display:grid;place-items:center;font-size:15px;
+}
+
+/* ── Hero ── */
+.hero{
+  background:linear-gradient(135deg,rgba(167,139,250,.07),rgba(77,217,255,.04));
+  border:1px solid rgba(167,139,250,.14);
+  border-radius:var(--r);
+  padding:22px;margin-bottom:15px;
+}
+.hero-inner{display:flex;gap:16px;align-items:flex-start}
+.ava{
+  width:72px;height:72px;flex-shrink:0;border-radius:13px;
+  background:linear-gradient(135deg,var(--c),var(--pk));
+  display:grid;place-items:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:24px;color:#030912;
+}
+
+.hero-name{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:var(--head);line-height:1.2}
+.hero-sub{font-size:13px;color:var(--p);font-weight:600;margin:3px 0 8px}
+.hero-desc{font-size:14px;color:var(--muted);line-height:1.6}
+.chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:5px}
+
+/* ── Chips ── */
+.chip{
+  display:inline-flex;align-items:center;
+  padding:3px 9px;border-radius:99px;font-size:12px;font-weight:500;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:var(--muted);
+}
+.chip.c{background:rgba(77,217,255,.08);border-color:rgba(77,217,255,.2);color:var(--c)}
+.chip.p{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.2);color:var(--p)}
+.chip.pk{background:rgba(255,106,171,.08);border-color:rgba(255,106,171,.2);color:var(--pk)}
+.chip.g{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.2);color:var(--g)}
+.chip.a{background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.2);color:var(--a)}
+
+/* ── Alert ── */
+.alert{
+  border-radius:10px;padding:12px 15px;font-size:13px;
+  display:flex;gap:9px;align-items:flex-start;margin-bottom:14px;
+}
+.alert.warn{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);color:var(--a)}
+.alert.info{background:rgba(77,217,255,.05);border:1px solid rgba(77,217,255,.15);color:var(--c)}
+.alert-ico{font-size:15px;flex-shrink:0;line-height:1.5}
+.alert a{color:inherit;font-weight:700}
+
+/* ── Stage block ── */
+.stage{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:10px;padding:15px;margin-bottom:12px;
+}
+.stage-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.stage-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--head)}
+.stage-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+ul.tl{padding-left:15px;font-size:13px;color:var(--muted)}
+ul.tl li{margin-bottom:3px}
+.dl{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 12px;border-radius:7px;margin-top:10px;
+  font-size:12px;font-weight:600;text-decoration:none;border:1px solid;
+  transition:opacity .14s;
+}
+.dl:hover{opacity:.7}
+.dl.pk{color:var(--pk);border-color:rgba(255,106,171,.3)}
+.dl.c{color:var(--c);border-color:rgba(77,217,255,.3)}
+
+/* ── Project block ── */
+.proj{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:10px;padding:15px;margin-bottom:12px;
+}
+.proj-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--head);margin-bottom:5px}
+.screens{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.screen-ph{
+  height:100px;border-radius:7px;
+  background:#08111a;border:1px dashed rgba(255,255,255,.05);
+  display:grid;place-items:center;font-size:11px;color:rgba(255,255,255,.15);
+}
+.gh{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 12px;border-radius:7px;
+  font-size:12px;font-weight:600;text-decoration:none;
+  color:var(--c);border:1px solid rgba(77,217,255,.3);
+  transition:opacity .14s;
+}
+.gh:hover{opacity:.7}
+.unfinished{
+  font-size:12px;font-style:italic;color:rgba(255,255,255,.25);
+  background:rgba(0,0,0,.2);border:1px dashed rgba(255,255,255,.05);
+  border-radius:7px;padding:9px 12px;margin-top:8px;
+}
+
+/* ── Veille ── */
+.vi{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:10px;padding:13px 15px;margin-bottom:11px;
+  position:relative;
+}
+.vi-num{
+  position:absolute;top:13px;right:13px;
+  width:22px;height:22px;border-radius:5px;
+  background:rgba(167,139,250,.1);
+  display:grid;place-items:center;
+  font-size:10px;font-weight:700;color:var(--p);
+}
+.vi-date{font-size:11px;color:var(--muted);margin-bottom:3px}
+.vi-src{
+  display:inline-block;font-size:10px;
+  background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.15);
+  color:var(--p);padding:1px 6px;border-radius:4px;margin-left:6px;
+}
+.vi-title{font-weight:600;color:var(--head);font-size:13px;margin-bottom:5px;padding-right:28px;line-height:1.4}
+.vi-txt{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:7px}
+.vi-link{font-size:12px;font-weight:600;color:var(--p);text-decoration:none}
+.vi-link:hover{text-decoration:underline}
+
+/* ── Env ── */
+.env-sec{margin-bottom:16px}
+.env-h{
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:700;
+  color:var(--g);margin-bottom:7px;display:flex;align-items:center;gap:5px;
+}
+.env-sec p{font-size:13px;color:var(--muted);line-height:1.6}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0}
+.stat{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:11px}
+.stat .n{font-family:'Syne',sans-serif;font-size:19px;font-weight:800;color:var(--a)}
+.stat .l{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ── Oral ── */
+.phases{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:11px 0}
+.ph{border-radius:9px;padding:13px;text-align:center}
+.ph1{background:rgba(77,217,255,.06);border:1px solid rgba(77,217,255,.14)}
+.ph2{background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.14)}
+.ph .mn{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;line-height:1}
+.ph1 .mn{color:var(--c)}
+.ph2 .mn{color:var(--p)}
+.ph .lb{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* ── Sidebar ── */
+.sb-contact p{font-size:13px;color:var(--muted);margin-bottom:3px}
+.sb-contact strong{color:var(--text)}
+.divider{height:1px;background:var(--border);margin:13px 0}
+.net-link{
+  display:flex;align-items:center;gap:7px;
+  padding:9px 12px;border-radius:8px;
+  text-decoration:none;font-size:13px;font-weight:600;
+  background:var(--s2);border:1px solid var(--border);
+  transition:border-color .14s,color .14s;margin-bottom:7px;
+}
+.net-link:hover{border-color:rgba(255,255,255,.12);color:var(--head)}
+.net-link.gh-net{color:var(--c)}
+.net-link.li-net{color:#0a66c2}
+
+/* ── Competences sidebar ── */
+.cg{margin-bottom:13px}
+.cg-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:7px}
+.ci{
+  display:flex;align-items:flex-start;gap:6px;
+  font-size:12px;color:var(--muted);margin-bottom:5px;line-height:1.4;
+}
+.ci::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px;background:var(--p)}
+
+/* ── Footer ── */
+footer{
+  border-top:1px solid var(--border);
+  text-align:center;padding:20px;
+  font-size:12px;color:var(--muted);
+  position:relative;z-index:1;
+}
+footer a{color:var(--p);text-decoration:none;font-weight:600}
+
+/* ── Misc ── */
+.label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.note{font-size:12px;font-style:italic;color:rgba(255,255,255,.22);padding:9px 11px;border-radius:7px;border:1px dashed rgba(255,255,255,.05);background:rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header>
+  <div class="hdr">
+    <div class="logo">KC</div>
+    <div class="brand-txt">
+      <h1>Kylian Cattoire</h1>
+      <small>BTS SIO SLAM · Lycée Paul Sabatier, Carcassonne</small>
+    </div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#stages">Stages</a>
+      <a href="#projets">Projets</a>
+      <a href="#veille">Veille</a>
+      <a href="#env">Env.</a>
+      <a href="#competences">Compétences</a>
+    </nav>
+    <a class="cv-btn" href="#" title="Télécharger le CV PDF">↓ CV (PDF)</a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ PAGE ═══════════════════════════ -->
+<div class="page">
+
+  <!-- ══════ COLONNE GAUCHE ══════ -->
+  <div>
+
+    <!-- Hero -->
+    <section id="accueil" class="hero">
+      <div class="hero-inner">
+        <div class="ava">K</div>
+        <div style="min-width:0">
+          <div class="hero-name">Kylian Cattoire</div>
+          <div class="hero-sub">BTS SIO · option SLAM · 2ᵉ année</div>
+          <div class="hero-desc">
+            Étudiant de 19 ans passionné par le développement web et la programmation.
+            Actif sur GitHub, je travaille sur des projets personnels — dont une plateforme
+            de location de films et un hébergeur de services en ligne avec un ami.
+            Mes stages m'ont permis de confronter mes connaissances à des environnements professionnels réels.
+          </div>
+          <div class="chips">
+            <span class="chip c">HTML / CSS</span>
+            <span class="chip p">JavaScript</span>
+            <span class="chip pk">PHP</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Excel / VBA</span>
+            <span class="chip g">Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerte obligatoire -->
+    <div class="alert warn">
+      <span class="alert-ico">⚠️</span>
+      <div>
+        <strong>Documents obligatoires</strong> — Portfolio + 2 attestations de stage + tableau de synthèse signé.<br/>
+        <a href="https://www.inion-web.fr/?p=4702" target="_blank">→ Accéder au tableau de synthèse</a>
+      </div>
+    </div>
+
+    <!-- ── STAGES ── -->
+    <section id="stages" class="card">
+      <div class="ctitle">
+        <div class="cicon" style="background:rgba(255,106,171,.1)">💼</div>
+        Stages professionnels
+      </div>
+
+      <!-- Stage 1 -->
+      <div class="stage">
+        <div class="stage-head">
+          <div>
+            <div class="stage-title">Stage 1 — E. Leclerc, Castelnaudary</div>
+          </div>
+          <span class="chip pk">Stage 1</span>
+        </div>
+        <div class="stage-meta">Durée : 7 semaines · Service informatique</div>
+        <ul class="tl">
+          <li>Gestion et maintenance d'une base de données interne (modélisation, requêtes SQL).</li>
+          <li>Conception d'un système Excel automatisé (macros VBA) pour les tâches récurrentes des collègues.</li>
+          <li>Sauvegarde des données et documentation des procédures techniques.</li>
+          <li>Assistance aux utilisateurs sur les incidents courants (matériel, logiciel).</li>
+        </ul>
+        <div class="chips" style="margin-top:9px">
+          <span class="chip">Excel / VBA</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Gestion parc</span>
+          <span class="chip">Support utilisateurs</span>
+        </div>
+        <a class="dl pk" href="#" title="Attestation Stage 1 — PDF à ajouter">📄 Attestation de stage (PDF)</a>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="stage">
+        <div class="stage-head">
+          <div>
+            <div class="stage-title">Stage 2 — <em style="color:var(--muted);font-style:normal">(à compléter)</em></div>
+          </div>
+          <span class="chip c">Stage 2</span>
+        </div>
+        <div class="stage-meta">Entreprise & dates : à renseigner</div>
+        <div class="note">Espace réservé — décrire ici les missions, outils utilisés et compétences mobilisées.</div>
+        <a class="dl c" href="#" title="Attestation Stage 2">📄 Attestation de stage (PDF)</a>
+      </div>
+    </section>
+
+    <!-- ── PROJETS ── -->
+    <section id="projets" class="card">
+      <div class="ctitle">
+        <div class="cicon" style="background:rgba(77,217,255,.1)">🚀</div>
+        Projets réalisés
+      </div>
+
+      <!-- Projet 1 -->
+      <div class="proj">
+        <div class="proj-title">🎬 Plateforme de location de films</div>
+        <div class="chips" style="margin:5px 0 9px">
+          <span class="chip c">Projet SLAM</span>
+          <span class="chip p">Web full-stack</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:9px">
+          Site web permettant la location de films physiques (retrait/retour) et numériques (streaming/téléchargement).
+          Comprend un catalogue, un système de panier, la gestion des comptes utilisateurs et un espace administrateur.
+        </p>
+        <ul class="tl">
+          <li>Modélisation de la base de données (MCD/MLD, MySQL).</li>
+          <li>Back-end PHP + API REST et gestion des sessions.</li>
+          <li>Interface responsive HTML/CSS/JS avec authentification sécurisée.</li>
+          <li>Tests fonctionnels et recette.</li>
+        </ul>
+        <div class="screens">
+          <div class="screen-ph">Capture à ajouter</div>
+          <div class="screen-ph">Capture à ajouter</div>
+        </div>
+        <div class="chips">
+          <span class="chip pk">PHP</span>
+          <span class="chip">MySQL</span>
+          <span class="chip p">JavaScript</span>
+          <span class="chip">HTML/CSS</span>
+        </div>
+        <a class="gh" href="https://github.com/kylianFractal" target="_blank" style="margin-top:11px">⌥ GitHub — kylianFractal</a>
+      </div>
+
+      <!-- Projet 2 (non abouti) -->
+      <div class="proj">
+        <div class="proj-title">🌐 Hébergeur de services & jeux en ligne</div>
+        <div class="chips" style="margin:5px 0 9px">
+          <span class="chip g">Projet personnel</span>
+          <span class="chip a" style="font-size:11px">En cours / non abouti</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted)">
+          Projet mené avec un ami : mise en place d'une infrastructure d'hébergement pour des services web
+          et des serveurs de jeux multijoueurs. Gestion de serveurs Linux, configuration réseau et création
+          d'un panneau de contrôle client.
+        </p>
+        <div class="unfinished" style="margin-top:9px">
+          Projet en cours de développement, sans captures disponibles à ce jour.
+          Les fonctionnalités principales sont planifiées mais non finalisées.
+        </div>
+        <div class="chips" style="margin-top:9px">
+          <span class="chip">Linux</span>
+          <span class="chip">Réseau</span>
+          <span class="chip p">JavaScript</span>
+          <span class="chip">Node.js</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ENV ── -->
+    <section id="env" class="card">
+      <div class="ctitle">
+        <div class="cicon" style="background:rgba(74,222,128,.1)">🌍</div>
+        Informatique &amp; impacts environnementaux
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">
+        Recherche réalisée dans le cadre du BTS SIO sur les enjeux environnementaux du numérique.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat"><div class="n">4 %</div><div class="l">des émissions mondiales de CO₂ produites par le secteur numérique (2023)</div></div>
+        <div class="stat"><div class="n">~200 TWh</div><div class="l">consommés par les data centers dans le monde chaque année</div></div>
+        <div class="stat"><div class="n">70 %</div><div class="l">de l'empreinte carbone d'un smartphone concentrée dans sa fabrication</div></div>
+        <div class="stat"><div class="n">55 Mt</div><div class="l">de déchets électroniques produits dans le monde en 2023</div></div>
+      </div>
+
+      <div class="env-sec" style="margin-top:14px">
+        <div class="env-h">🏭 Pollution des data centers</div>
+        <p>Les centres de données consomment d'importantes quantités d'électricité pour faire fonctionner les serveurs et les refroidir. En France, les data centers représentent environ 16 % de la consommation électrique du numérique. Les grands acteurs (Google, Amazon, Microsoft) investissent dans des énergies renouvelables et des systèmes de refroidissement innovants (free cooling, immersion cooling) pour réduire leur empreinte carbone.</p>
+      </div>
+      <div class="env-sec">
+        <div class="env-h">📱 Fabrication et cycle de vie du matériel</div>
+        <p>La fabrication d'un smartphone représente à elle seule 70 % de son empreinte carbone totale. L'extraction des métaux rares nécessaires aux composants électroniques a un impact environnemental et social considérable. Allonger la durée de vie des appareils est l'un des leviers les plus efficaces pour réduire l'empreinte du numérique.</p>
+      </div>
+      <div class="env-sec">
+        <div class="env-h">💻 Éco-conception logicielle</div>
+        <p>Un logiciel bien conçu consomme moins de ressources et prolonge la durée de vie du matériel. Les principes de l'éco-conception (réduction des requêtes, optimisation du code, chargement paresseux, hébergement géolocalisé) permettent de réduire les émissions. Des référentiels comme le GR491 et le RGESN guident les développeurs vers des pratiques plus sobres.</p>
+      </div>
+      <div class="env-sec">
+        <div class="env-h">♻️ Déchets électroniques (DEEE)</div>
+        <p>Les DEEE constituent l'un des flux de déchets qui croît le plus rapidement dans le monde. En France, la filière REP oblige les fabricants à financer le recyclage. En tant que futur professionnel du numérique, m'engage à promouvoir le reconditionnement et le recyclage dans mes pratiques professionnelles.</p>
+      </div>
+      <div class="alert info" style="margin-top:4px">
+        <span class="alert-ico">💡</span>
+        <div><strong>Mon engagement</strong> — Dans mes projets je veille à optimiser les requêtes SQL, compresser les ressources web et héberger sur des serveurs certifiés énergétiquement efficients.</div>
+      </div>
+    </section>
+
+    <!-- ── ORAL ── -->
+    <section class="card">
+      <div class="ctitle">
+        <div class="cicon" style="background:rgba(251,191,36,.1)">🎤</div>
+        Épreuve orale E5 — organisation
+      </div>
+      <div class="phases">
+        <div class="ph ph1">
+          <div class="mn">10'</div>
+          <div class="lb">Exposé du parcours<br/><small>(min. 7 minutes)</small></div>
+        </div>
+        <div class="ph ph2">
+          <div class="mn">30'</div>
+          <div class="lb">Entretien jury<br/><small>(variable selon durée exposé)</small></div>
+        </div>
+      </div>
+      <ul class="tl" style="margin-top:6px">
+        <li>Portfolio accessible en ligne ou sur support physique.</li>
+        <li>Les 2 attestations de stage sont <strong style="color:var(--text)">obligatoires</strong>.</li>
+        <li>Tableau de synthèse complété et <strong style="color:var(--text)">signé</strong> par le tuteur.</li>
+        <li>Veille technologique et recherche environnement accessibles depuis le portfolio.</li>
+      </ul>
+      <div class="alert warn" style="margin-top:11px">
+        <span class="alert-ico">⛔</span>
+        <div>Pénalité <strong>−10 pts</strong> si portfolio inaccessible · <strong>−2 pts</strong> si tableau de synthèse absent</div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ══════ COLONNE DROITE (SIDEBAR) ══════ -->
+  <aside>
+
+    <!-- Contact -->
+    <div class="card sb-contact">
+      <div class="ctitle" style="font-size:14px">
+        <div class="cicon" style="background:rgba(77,217,255,.1)">👤</div>
+        Contact
+      </div>
+      <div class="label">Nom</div>
+      <p style="margin-bottom:10px"><strong>Kylian Cattoire</strong> · 19 ans</p>
+      <div class="label">Formation</div>
+      <p style="margin-bottom:12px">BTS SIO SLAM · Lycée Paul Sabatier, Carcassonne</p>
+
+      <a class="net-link gh-net" href="https://github.com/kylianFractal" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        github.com/kylianFractal
+      </a>
+      <a class="net-link li-net" href="https://www.linkedin.com/in/kylian-cattoire-a55704326/" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn — Kylian Cattoire
+      </a>
+
+      <div class="divider"></div>
+      <a class="cv-btn" href="#" style="display:block;text-align:center;padding:10px">↓ Télécharger mon CV (PDF)</a>
+    </div>
+
+    <!-- Veille quantique -->
+    <div class="card" id="veille">
+      <div class="ctitle" style="font-size:14px">
+        <div class="cicon" style="background:rgba(167,139,250,.1)">🔭</div>
+        Veille — Informatique quantique
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:13px">
+        Suivi des actualités sur l'informatique quantique — articles de 2025 à 2026.
+      </p>
+
+      <!-- Article 1 — janvier 2026 -->
+      <div class="vi">
+        <div class="vi-num">1</div>
+        <div class="vi-date">Janvier 2026 <span class="vi-src">Futura Sciences</span></div>
+        <div class="vi-title">2026 : le quantique sort des labos et entre dans l'ingénierie concrète</div>
+        <div class="vi-txt">
+          Selon les experts, 2026 est l'année de consolidation : l'informatique quantique passe du laboratoire à l'ingénierie réelle des processeurs. IBM a déployé son processeur Heron à 1 386 qubits supraconducteurs, tandis que Google revendique des calculs impossibles pour n'importe quel supercalculateur classique. Des applications concrètes émergent en pharmacie (Roche), en logistique et en optimisation énergétique (EDF + Pasqal).
+        </div>
+        <a class="vi-link" href="https://www.futura-sciences.com/tech/actualites/ordinateur-quantique-informatique-quantique-sort-laboratoire-ce-2026-va-reellement-apporter-129974/" target="_blank">→ Lire sur Futura-Sciences</a>
+      </div>
+
+      <!-- Article 2 — novembre 2025 IBM -->
+      <div class="vi">
+        <div class="vi-num">2</div>
+        <div class="vi-date">Novembre 2025 <span class="vi-src">IBM Newsroom</span></div>
+        <div class="vi-title">IBM Nighthawk & Loon : IBM vise l'avantage quantique d'ici fin 2026</div>
+        <div class="vi-txt">
+          Lors de la Quantum Developer Conference 2025, IBM a dévoilé le processeur Nighthawk (120 qubits, connectivité +20 %) livré fin 2025, et la puce Loon intégrant tous les éléments matériels d'une correction d'erreurs tolérante aux pannes — réalisée un an avant le calendrier prévu. IBM prévoit les premiers cas d'avantage quantique vérifiés d'ici la fin 2026, validés par la communauté scientifique.
+        </div>
+        <a class="vi-link" href="https://fr.newsroom.ibm.com/IBM-d-voile-de-nouveaux-processeurs-quantiques,-logiciels-et-algorithmes-r-volutionnaires-qui-ouvrent-la-voie-lavantage-quantique-et-des-syst-mes-tol-rants-aux-erreurs" target="_blank">→ Lire sur IBM Newsroom</a>
+      </div>
+
+      <!-- Article 3 — 2025 cryptographie -->
+      <div class="vi">
+        <div class="vi-num">3</div>
+        <div class="vi-date">Avril 2025 <span class="vi-src">Forum des Compétences</span></div>
+        <div class="vi-title">Le Q-Day : quand le quantique menace la cryptographie RSA</div>
+        <div class="vi-txt">
+          Le Q-Day — moment où un ordinateur quantique cassera les algorithmes RSA et ECC via l'algorithme de Shor — n'est plus théorique. Dès 2025, la NSA, l'ANSSI et le NIST intensifient leurs recommandations pour migrer vers la cryptographie post-quantique (CRYSTALS-Kyber, CRYSTALS-Dilithium). Des attaques "collecter maintenant, déchiffrer plus tard" sont déjà actives.
+        </div>
+        <a class="vi-link" href="https://www.forum-des-competences.org/quantique-2025/" target="_blank">→ Lire sur forum-des-competences.org</a>
+      </div>
+
+      <!-- Article 4 — Europe Nobel 2025 -->
+      <div class="vi">
+        <div class="vi-num">4</div>
+        <div class="vi-date">2025-2026 <span class="vi-src">Tech Show Paris</span></div>
+        <div class="vi-title">L'Europe dans la course quantique : 11 Md€ investis, mais un retard industriel</div>
+        <div class="vi-txt">
+          Le Nobel de physique 2025 a récompensé des chercheurs européens en informatique quantique. L'UE a injecté 2 Md€ et les États membres 9 Md€ supplémentaires, plaçant l'Europe en tête de la recherche publiée. Malgré cela, l'Europe ne représente que 6 % des brevets déposés. Bruxelles veut désormais unifier sa stratégie et créer des hubs d'infrastructure pour rester compétitive face aux États-Unis et à la Chine.
+        </div>
+        <a class="vi-link" href="https://www.techshowparis.fr/actualites-tech-show-paris/comment-leurope-veut-changer-dechelle-dans-le-quantique" target="_blank">→ Lire sur Tech Show Paris</a>
+      </div>
+
+      <p style="font-size:11px;color:rgba(255,255,255,.18);font-style:italic;margin-top:5px;padding-top:8px;border-top:1px solid var(--border)">Veille mise à jour — dernière révision mars 2026.</p>
+    </div>
+
+    <!-- Compétences référentiel -->
+    <div class="card" id="competences">
+      <div class="ctitle" style="font-size:14px">
+        <div class="cicon" style="background:rgba(74,222,128,.1)">📋</div>
+        Référentiel E5 — Bloc 1
+      </div>
+
+      <div class="cg">
+        <div class="cg-title" style="color:var(--pk)">Patrimoine informatique</div>
+        <div class="ci">Recenser et identifier les ressources numériques</div>
+        <div class="ci">Exploiter référentiels, normes et standards</div>
+        <div class="ci">Gérer les sauvegardes</div>
+        <div class="ci">Vérifier le respect des règles d'utilisation</div>
+      </div>
+      <div class="cg">
+        <div class="cg-title" style="color:var(--a)">Incidents &amp; assistance</div>
+        <div class="ci">Collecter, suivre et orienter des demandes</div>
+        <div class="ci">Traiter des demandes réseau / système</div>
+        <div class="ci">Traiter des demandes applicatives</div>
+      </div>
+      <div class="cg">
+        <div class="cg-title" style="color:var(--c)">Présence en ligne</div>
+        <div class="ci">Valoriser l'image sur les médias numériques</div>
+        <div class="ci">Référencer les services en ligne</div>
+        <div class="ci">Participer à l'évolution d'un site web</div>
+      </div>
+      <div class="cg">
+        <div class="cg-title" style="color:var(--p)">Mode projet</div>
+        <div class="ci">Analyser objectifs et modalités</div>
+        <div class="ci">Planifier les activités</div>
+        <div class="ci">Évaluer les indicateurs de suivi</div>
+      </div>
+      <div class="cg">
+        <div class="cg-title" style="color:var(--g)">Mise à disposition</div>
+        <div class="ci">Réaliser les tests d'intégration</div>
+        <div class="ci">Déployer un service</div>
+        <div class="ci">Accompagner les utilisateurs</div>
+      </div>
+      <div class="cg" style="margin-bottom:0">
+        <div class="cg-title">Développement professionnel</div>
+        <div class="ci">Mettre en place un environnement d'apprentissage</div>
+        <div class="ci">Mettre en œuvre une stratégie de veille</div>
+        <div class="ci">Gérer son identité professionnelle</div>
+        <div class="ci">Développer son projet professionnel</div>
+      </div>
+
+      <div class="divider"></div>
+      <a href="https://www.inion-web.fr/?p=4702" target="_blank"
+         style="display:block;text-align:center;padding:9px;border-radius:7px;background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);color:var(--a);font-weight:700;font-size:12px;text-decoration:none">
+        📋 Tableau de synthèse (à faire signer)
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <strong style="color:var(--head)">Kylian Cattoire</strong> — Portfolio E5 BTS SIO SLAM ·
+  Lycée Paul Sabatier, Carcassonne ·
+  <a href="https://github.com/kylianFractal" target="_blank">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/kylian-cattoire-a55704326/" target="_blank">LinkedIn</a> ·
+  <a href="https://www.inion-web.fr/?p=4702" target="_blank">Tableau de synthèse</a>
+</footer>
+
+</body>
+</html>
