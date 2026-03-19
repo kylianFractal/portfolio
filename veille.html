@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Veille technologique — Kylian Cattoire · Portfolio BTS SIO SLAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.vi-img { width:100%; height:90px; border-radius:7px; background:var(--bg); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:10px; }
+.vi-tag { display:inline-flex; align-items:center; padding:2px 7px; border-radius:4px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-right:4px; }
+.tag-new  { background:rgba(74,222,128,.1); color:var(--g); border:1px solid rgba(74,222,128,.2); }
+.tag-cryp { background:rgba(251,191,36,.1); color:var(--a); border:1px solid rgba(251,191,36,.2); }
+.tag-hw   { background:rgba(77,217,255,.1); color:var(--c); border:1px solid rgba(77,217,255,.2); }
+.tag-eu   { background:rgba(167,139,250,.1); color:var(--p); border:1px solid rgba(167,139,250,.2); }
+.veille-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:700px){ .veille-grid { grid-template-columns:1fr; } }
+.vi-full { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="hdr">
+    <a class="logo" href="index.html">KC</a>
+    <div class="brand-txt">
+      <h1>Kylian Cattoire</h1>
+      <small>BTS SIO SLAM · Lycée Paul Sabatier, Carcassonne</small>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="stages.html">Stages</a>
+      <a href="projets.html">Projets</a>
+      <a href="veille.html">Veille</a>
+      <a href="cv.html">CV</a>
+    </nav>
+    <a class="cv-btn" href="cv.html">Voir mon CV</a>
+  </div>
+</header>
+
+<!-- ═══ PAGE ═══ -->
+<div class="page">
+  <div>
+
+    <!-- Bannière page -->
+    <div class="page-banner fade-in">
+      <div class="page-banner-icon">🔭</div>
+      <div>
+        <div class="breadcrumb"><a href="index.html">Accueil</a> › Veille technologique</div>
+        <h2>Veille — Informatique quantique</h2>
+        <p>Suivi des actualités 2024–2026 · Du plus récent au plus ancien</p>
+      </div>
+    </div>
+
+    <div class="alert info fade-in" style="margin-bottom:16px">
+      <span class="alert-ico">🔭</span>
+      <div>
+        <strong>Pourquoi l'informatique quantique ?</strong> Le quantique est une rupture technologique majeure pour l'informatique des prochaines décennies — en termes de puissance de calcul, de cryptographie et d'impacts sur la sécurité des systèmes d'information.
+        <br>Veille mise à jour — dernière révision <strong>mars 2026</strong>.
+      </div>
+    </div>
+
+    <!-- Grille d'articles -->
+    <div class="veille-grid">
+
+      <!-- Article 1 — Janvier 2026 — FULL WIDTH -->
+      <div class="vi vi-full fade-in">
+        <div class="vi-num">1</div>
+        <div class="vi-img">🧮</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-new">⭐ Récent</span>
+          <span class="vi-tag tag-hw">Matériel</span>
+        </div>
+        <div class="vi-date">Janvier 2026 <span class="vi-src">Futura Sciences</span></div>
+        <div class="vi-title">2026 : le quantique sort des labos et entre dans l'ingénierie concrète</div>
+        <div class="vi-txt">
+          Selon les experts, 2026 est l'année de consolidation : l'informatique quantique passe du laboratoire à l'ingénierie réelle des processeurs.
+          IBM a déployé son processeur Heron à 1 386 qubits supraconducteurs, tandis que Google revendique des calculs impossibles pour n'importe quel supercalculateur classique.
+          Des applications concrètes émergent en pharmacie (Roche), en logistique et en optimisation énergétique (EDF + Pasqal).
+        </div>
+        <a class="vi-link" href="https://www.futura-sciences.com/tech/actualites/ordinateur-quantique-informatique-quantique-sort-laboratoire-ce-2026-va-reellement-apporter-129974/" target="_blank">→ Lire sur Futura-Sciences</a>
+      </div>
+
+      <!-- Article 2 — Novembre 2025 IBM -->
+      <div class="vi fade-in">
+        <div class="vi-num">2</div>
+        <div class="vi-img">🔵</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-hw">Matériel</span>
+        </div>
+        <div class="vi-date">Novembre 2025 <span class="vi-src">IBM Newsroom</span></div>
+        <div class="vi-title">IBM Nighthawk &amp; Loon : IBM vise l'avantage quantique d'ici fin 2026</div>
+        <div class="vi-txt">
+          IBM dévoile Nighthawk (120 qubits, connectivité +20 %) et la puce Loon intégrant tous les éléments matériels d'une correction d'erreurs tolérante aux pannes — un an avant le calendrier prévu.
+        </div>
+        <a class="vi-link" href="https://fr.newsroom.ibm.com/IBM-d-voile-de-nouveaux-processeurs-quantiques,-logiciels-et-algorithmes-r-volutionnaires-qui-ouvrent-la-voie-lavantage-quantique-et-des-syst-mes-tol-rants-aux-erreurs" target="_blank">→ Lire sur IBM Newsroom</a>
+      </div>
+
+      <!-- Article 3 — Octobre 2025 Google Willow -->
+      <div class="vi fade-in">
+        <div class="vi-num">3</div>
+        <div class="vi-img">🔴</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-hw">Matériel</span>
+        </div>
+        <div class="vi-date">Octobre 2025 <span class="vi-src">Google Blog</span></div>
+        <div class="vi-title">Google Willow : correction d'erreurs exponentiellement améliorée</div>
+        <div class="vi-txt">
+          Google présente Willow, une puce quantique capable de réduire le taux d'erreur de manière exponentielle à mesure qu'on ajoute des qubits. Un calcul réalisé en 5 minutes aurait nécessité 10 septillions d'années sur un supercalculateur classique.
+        </div>
+        <a class="vi-link" href="https://blog.google/technology/research/google-willow-quantum-chip/" target="_blank">→ Lire sur Google Blog</a>
+      </div>
+
+      <!-- Article 4 — Avril 2025 cryptographie -->
+      <div class="vi fade-in">
+        <div class="vi-num">4</div>
+        <div class="vi-img">🔐</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-cryp">Cryptographie</span>
+        </div>
+        <div class="vi-date">Avril 2025 <span class="vi-src">Forum des Compétences</span></div>
+        <div class="vi-title">Le Q-Day : quand le quantique menace la cryptographie RSA</div>
+        <div class="vi-txt">
+          Le Q-Day — moment où un ordinateur quantique cassera RSA via l'algorithme de Shor — n'est plus théorique.
+          La NSA, l'ANSSI et le NIST intensifient leurs recommandations pour migrer vers la cryptographie post-quantique (CRYSTALS-Kyber, CRYSTALS-Dilithium).
+        </div>
+        <a class="vi-link" href="https://www.forum-des-competences.org/quantique-2025/" target="_blank">→ Lire sur forum-des-competences.org</a>
+      </div>
+
+      <!-- Article 5 — Février 2025 Microsoft -->
+      <div class="vi fade-in">
+        <div class="vi-num">5</div>
+        <div class="vi-img">🪟</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-hw">Matériel</span>
+        </div>
+        <div class="vi-date">Février 2025 <span class="vi-src">Microsoft Research</span></div>
+        <div class="vi-title">Microsoft dévoile le qubit topologique : une nouvelle ère pour la stabilité quantique</div>
+        <div class="vi-txt">
+          Microsoft annonce une avancée majeure avec son qubit topologique basé sur des quasi-particules appelées anyons de Majorana.
+          Ces qubits sont intrinsèquement plus stables, réduisant drastiquement les erreurs de calcul — ouvrant la voie à un ordinateur quantique fiable à grande échelle.
+        </div>
+        <a class="vi-link" href="https://azure.microsoft.com/en-us/blog/microsoft-achieves-first-demonstration-of-topological-qubits/" target="_blank">→ Lire sur Microsoft Research</a>
+      </div>
+
+      <!-- Article 6 — Europe 2025 -->
+      <div class="vi fade-in">
+        <div class="vi-num">6</div>
+        <div class="vi-img">🇪🇺</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-eu">Europe</span>
+        </div>
+        <div class="vi-date">2025–2026 <span class="vi-src">Tech Show Paris</span></div>
+        <div class="vi-title">L'Europe dans la course quantique : 11 Md€ investis, mais un retard industriel</div>
+        <div class="vi-txt">
+          Nobel de physique 2025 récompensant des chercheurs européens. L'UE a injecté 2 Md€, les États membres 9 Md€ supplémentaires. Pourtant l'Europe ne représente que 6 % des brevets déposés face aux États-Unis et à la Chine.
+        </div>
+        <a class="vi-link" href="https://www.techshowparis.fr/actualites-tech-show-paris/comment-leurope-veut-changer-dechelle-dans-le-quantique" target="_blank">→ Lire sur Tech Show Paris</a>
+      </div>
+
+      <!-- Article 7 — NIST 2024 -->
+      <div class="vi fade-in">
+        <div class="vi-num">7</div>
+        <div class="vi-img">🏛️</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-cryp">Cryptographie</span>
+        </div>
+        <div class="vi-date">Août 2024 <span class="vi-src">NIST</span></div>
+        <div class="vi-title">NIST finalise les premiers standards de cryptographie post-quantique</div>
+        <div class="vi-txt">
+          Le NIST publie ses premiers standards officiels de cryptographie post-quantique (PQC) : ML-KEM (CRYSTALS-Kyber), ML-DSA (CRYSTALS-Dilithium) et SLH-DSA (SPHINCS+). Ces normes ont vocation à remplacer RSA et ECC dans tous les systèmes d'information critiques d'ici 2030.
+        </div>
+        <a class="vi-link" href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards" target="_blank">→ Lire sur NIST.gov</a>
+      </div>
+
+      <!-- Article 8 — IBM Quantum 2024 -->
+      <div class="vi fade-in">
+        <div class="vi-num">8</div>
+        <div class="vi-img">💙</div>
+        <div style="margin-bottom:6px">
+          <span class="vi-tag tag-hw">Matériel</span>
+        </div>
+        <div class="vi-date">Novembre 2024 <span class="vi-src">IBM Quantum</span></div>
+        <div class="vi-title">IBM Condor : 1 000 qubits franchis, un jalon symbolique</div>
+        <div class="vi-txt">
+          IBM dépasse le cap symbolique des 1 000 qubits avec son processeur Condor (1 121 qubits). Bien que la qualité des qubits reste plus importante que leur nombre, ce cap marque une avancée vers des machines capables de surpasser les ordinateurs classiques sur des problèmes réels d'optimisation et de simulation moléculaire.
+        </div>
+        <a class="vi-link" href="https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2033" target="_blank">→ Lire sur IBM Quantum</a>
+      </div>
+
+    </div><!-- /veille-grid -->
+
+    <p style="font-size:11px;color:rgba(255,255,255,.18);font-style:italic;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
+      Veille mise à jour — dernière révision mars 2026.
+    </p>
+
+    <!-- Liens nav -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <a class="section-link" href="projets.html">🚀 Voir les projets →</a>
+      <a class="section-link" href="stages.html">💼 Voir les stages →</a>
+      <a class="section-link" href="index.html" style="color:var(--muted)">← Retour accueil</a>
+    </div>
+
+  </div>
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside>
+    <div class="card sb-contact fade-in">
+      <div class="ctitle" style="font-size:14px">
+        <div class="cicon" style="background:rgba(77,217,255,.1)">👤</div>
+        Contact
+      </div>
+      <div class="label">Nom</div>
+      <p style="margin-bottom:10px"><strong>Kylian Cattoire</strong> · 19 ans</p>
+      <div class="label">Formation</div>
+      <p style="margin-bottom:12px">BTS SIO SLAM · Lycée Paul Sabatier, Carcassonne</p>
+      <a class="net-link gh-net" href="https://github.com/kylianFractal" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        github.com/kylianFractal
+      </a>
+      <a class="net-link li-net" href="https://www.linkedin.com/in/kylian-cattoire-a55704326/" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn — Kylian Cattoire
+      </a>
+      <div class="divider"></div>
+      <a class="cv-btn" href="cv.html" style="display:block;text-align:center;padding:10px">👁 Voir mon CV</a>
+    </div>
+
+    <div class="card fade-in">
+      <div class="ctitle" style="font-size:14px">
+        <div class="cicon" style="background:rgba(167,139,250,.1)">🗂️</div>
+        Thèmes couverts
+      </div>
+      <div class="cg">
+        <div class="cg-title" style="color:var(--c)">Matériel quantique</div>
+        <div class="ci">Processeurs supraconducteurs IBM</div>
+        <div class="ci">Puces Google (Willow)</div>
+        <div class="ci">Qubits topologiques Microsoft</div>
+      </div>
+      <div class="cg">
+        <div class="cg-title" style="color:var(--a)">Sécurité &amp; cryptographie</div>
+        <div class="ci">Q-Day et menace RSA</div>
+        <div class="ci">Standards NIST post-quantique</div>
+        <div class="ci">Algorithmes CRYSTALS-Kyber</div>
+      </div>
+      <div class="cg" style="margin-bottom:0">
+        <div class="cg-title" style="color:var(--p)">Stratégie &amp; géopolitique</div>
+        <div class="ci">Investissements européens</div>
+        <div class="ci">Course USA / Chine / Europe</div>
+        <div class="ci">Applications industrielles</div>
+      </div>
+    </div>
+
+    <div class="card fade-in">
+      <div style="font-size:12px;color:var(--muted);line-height:1.6">
+        <strong style="color:var(--head);font-size:13px">📁 Autres sections</strong>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px">
+          <a href="stages.html" class="section-link">💼 Stages →</a>
+          <a href="projets.html" class="section-link">🚀 Projets →</a>
+          <a href="cv.html" class="section-link">📄 CV →</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <strong style="color:var(--head)">Kylian Cattoire</strong> — Portfolio E5 BTS SIO SLAM ·
+  Lycée Paul Sabatier, Carcassonne ·
+  <a href="https://github.com/kylianFractal" target="_blank">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/kylian-cattoire-a55704326/" target="_blank">LinkedIn</a> ·
+  <a href="mentions-legales.html">Mentions légales</a>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
